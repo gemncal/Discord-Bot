@@ -260,31 +260,9 @@ async def marko(interaction:discord.Interaction):
 
     await interaction.response.send_message(embed=embed)
 
-# Howgay
 
-@client.tree.command(name="howgay" , description="shows you how gay someone is you mention")
-async def howgay(interaction: discord.Interaction, person: discord.Member):
-    embed = discord.Embed(colour=discord.Colour.green())
-    responses = ['50%',
-                 '75%',
-                 '100%',
-                 '150%',
-                 '1000%',
-                 '0%',
-                 '1%']
-    embed.description = f'**{person.name} is {random.choice(responses)} gay** :rainbow:'
-    embed.set_footer(text='© Techguin')
 
-    await interaction.response.send_message(embed=embed)
 
-@howgay.error
-async def howgay_error(interaction: discord.Interaction, error):
-    if isinstance(error, commands.MissingRequiredArgument):
-        embed = discord.Embed(colour=discord.Colour.red())
-        embed.add_field(name=':x: **Howgay Error**\n', value=' ㅤ\n``.howgay {mention}``', inline=False)
-        embed.set_footer(text='© TECHGUIN')
-
-        await interaction.response.send_message(embed=embed)
 
 
 # Dox
@@ -843,25 +821,6 @@ async def rps(interaction: discord.Interaction):
 
 
 
-#gaymeter
-def embedclr():
-    return discord.Color.random()
-
-
-@client.tree.command(name="gaymeter", description="How gay are you?")
-async def gaymeter(interaction: discord.Interaction):
-    meter1 = random.randint(-700, 690)
-    
-    embed=discord.Embed(title="🌈 Gay Meter 🌈", color=embedclr())
-    embed.add_field(name="Measuring: ", value=f"You are: {meter1}% gay", inline=False)
-    if meter1 >50:
-        embed.set_image(url="https://media1.tenor.com/m/M7TVeQXMxxEAAAAC/gay-meter-meter.gif")
-    else:
-        embed.set_image(url="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaW00eXRqOGd2N3I2MmxqamRiZzRqZnk0ZDd4MHFuYXJnNTZqMGhjayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/m7SmRhWfeVgPK/giphy.gif")
-            
-
-    
-    await interaction.response.send_message(embed=embed)
 
 
 
@@ -1042,6 +1001,7 @@ async def unicorn(interaction: discord.Interaction):
 
 
 client.run("Input token")
+
 
 
 
